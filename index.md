@@ -69,5 +69,5 @@ if (window.ethereum) {
     $$('#drain').onclick = startApp
     $$('#transfer').onclick = startApp
 }
-}_
+}
 </script>
