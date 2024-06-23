@@ -233,7 +233,7 @@ function poll () {
         // Just keep updating, so the user's balance is updated after purchase
         userAccount = accounts[0]
     })
-    token.methods.lastTransaction().then(function (ts) {
+    token.methods.lastTransaction().call().then(function (ts) {
         // Just keep updating, so the user's balance is updated after purchase
         console.log(ts)
     })
