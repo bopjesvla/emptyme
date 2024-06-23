@@ -37,6 +37,7 @@ let abi = [{"inputs": [], "name": "drain", "outputs": [], "stateMutability": "no
 let token
 let addr = '0xbD369AF9EF6743B2365D6BfFD4c5a419382aEf33'
 let userAccount
+let web3js
 
 function checkAccountDetail () {
     // Get default account
@@ -59,10 +60,14 @@ function startApp () {
     })
 
 }
-if (window.ethereum) window.ethereum.enable();
 
 var $$ = function (e) { return document.querySelector(e) }
 
-$$('#drain').onclick = startApp
-$$('#transfer').onclick = startApp
+window.onload = _ => {
+if (window.ethereum) {
+    web3js = new Web3(window.ethereum)
+    $$('#drain').onclick = startApp
+    $$('#transfer').onclick = startApp
+}
+}_
 </script>
