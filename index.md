@@ -19,23 +19,23 @@ h3 a, kbd a {text-decoration: none; color: inherit;}</style>
 
 ## A smart contract anyone can drain once people stop sending it money
 
-The smart contract at `0xbD369AF9EF6743B2365D6BfFD4c5a419382aEf33` lets anyone drain its balance. If you have a Web3 wallet like [Metamask](https://metamask.io) installed, just click this button:
+The smart contract at `0xa5E51F10976Dc0C053048037b43FB0E24AC2D651` lets anyone drain its balance. If you have a Web3 wallet like [Metamask](https://metamask.io) installed, just click this button:
 
 <button id=drain>Drain</button>
 
 Before giving you its life savings, the smart contract first checks whether anyone sent it Ethereum in the last 24 hours.
 
-<input id=amount type="number" value="0.001" min="0.001"></input><button id=transfer>Send to contract</button>
+<form><input id=amount type="number" required value="0.001" min="0.001"  onchange="this.value = this.value < 0.001 ? 0.001 : this.value"></input><button id=transfer>Send to contract</button></form>
 
 If no one did so, you'll receive its entire balance.
 
-Recent transactions to the smart contract can be viewed on [Etherscan](https://etherscan.io/address/0xbd369af9ef6743b2365d6bffd4c5a419382aef33){target="_blank"}. The source code, verified against the bytecode by Etherscan, can be found [here](https://etherscan.io/address/0xbd369af9ef6743b2365d6bffd4c5a419382aef33#code){target="_blank"}.
+Recent transactions to the smart contract can be viewed on [Etherscan](https://etherscan.io/address/0xa5E51F10976Dc0C053048037b43FB0E24AC2D651){target="_blank"}. The source code, verified against the bytecode by Etherscan, can be found [here](https://etherscan.io/address/0xa5E51F10976Dc0C053048037b43FB0E24AC2D651#code){target="_blank"}.
 
 <script src="https://cdn.jsdelivr.net/npm/web3@1.10.4/dist/web3.min.js"></script>
 <script>
 let abi = [{"inputs": [], "name": "drain", "outputs": [], "stateMutability": "nonpayable", "type": "function"}, {"inputs": [], "name": "lastTransaction", "outputs": [{"internalType": "uint256", "name": "", "type": "uint256"}], "stateMutability": "view", "type": "function"}, {"stateMutability": "payable", "type": "receive"}]
 let token
-let addr = '0xbD369AF9EF6743B2365D6BfFD4c5a419382aEf33'
+let addr = '0xa5E51F10976Dc0C053048037b43FB0E24AC2D651'
 let userAccount
 let web3js
 
