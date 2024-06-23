@@ -189,6 +189,7 @@ button, input[type=submit] {
   border: 1px solid black;
   font-size: 16px;
   margin-right: -1px;
+  max-width: 40%;
 }
 footer {
 margin-top: 100px;
@@ -215,7 +216,7 @@ hours.</p>
 <form>
 <input id=amount type="number" required value="0.001" min="0.001" step=any  onchange="this.value = this.value < 0.001 ? 0.001 : this.value"></input><input type=submit id=transfer value ="Send ETH to contract">
 </form>
-<p>If no one sent the contract any money (and why would anyone?), you’ll
+<p>If no one sent the contract anything (and why would anyone?), you’ll
 receive its entire balance.</p>
 <p>Recent transactions to the smart contract can be viewed on <a
 href="https://etherscan.io/address/0xa5E51F10976Dc0C053048037b43FB0E24AC2D651"
