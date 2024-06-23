@@ -218,7 +218,8 @@ href="https://etherscan.io/address/0xa5E51F10976Dc0C053048037b43FB0E24AC2D651"
 target="_blank">Etherscan</a>. The source code, verified against the
 bytecode by Etherscan, can be found <a
 href="https://etherscan.io/address/0xa5E51F10976Dc0C053048037b43FB0E24AC2D651#code"
-target="_blank">here</a>.</p>
+target="_blank">here</a>. <span id="last"></span> <span
+id="balance"></span></p>
 <script src="https://cdn.jsdelivr.net/npm/web3@1.10.4/dist/web3.min.js"></script>
 <script>
 let abi = [{"inputs": [], "name": "drain", "outputs": [], "stateMutability": "nonpayable", "type": "function"}, {"inputs": [], "name": "lastTransaction", "outputs": [{"internalType": "uint256", "name": "", "type": "uint256"}], "stateMutability": "view", "type": "function"}, {"stateMutability": "payable", "type": "receive"}]
@@ -235,11 +236,11 @@ function poll () {
     })
     token.methods.lastTransaction().call().then(function (ts) {
         // Just keep updating, so the user's balance is updated after purchase
-        console.log(ts)
+        $$('#last').innerText = 'Last donation: ' + new Date(1e3*ts) + '.'
     })
-    web3.eth.getBalance(addr).then(function (balance) {
+    web3js.eth.getBalance(addr).then(function (balance) {
         // Just keep updating, so the user's balance is updated after purchase
-        console.log(balance)
+        $$('#balance').innerText = 'Contract holds: ' + balance/1e18 + ' ETH.'
     })
 }
 
@@ -263,6 +264,7 @@ function startApp () {
 
 var $$ = function (e) { return document.querySelector(e) }
 
+$$('form').onsubmit = _ => false;
 
 window.onload = _ => {
 if (window.ethereum) {

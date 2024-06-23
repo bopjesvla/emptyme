@@ -47,7 +47,7 @@ Before giving you its life savings, the smart contract first checks whether anyo
 
 If no one did so (and why would anyone?), you'll receive its entire balance.
 
-Recent transactions to the smart contract can be viewed on [Etherscan](https://etherscan.io/address/0xa5E51F10976Dc0C053048037b43FB0E24AC2D651){target="_blank"}. The source code, verified against the bytecode by Etherscan, can be found [here](https://etherscan.io/address/0xa5E51F10976Dc0C053048037b43FB0E24AC2D651#code){target="_blank"}.
+Recent transactions to the smart contract can be viewed on [Etherscan](https://etherscan.io/address/0xa5E51F10976Dc0C053048037b43FB0E24AC2D651){target="_blank"}. The source code, verified against the bytecode by Etherscan, can be found [here](https://etherscan.io/address/0xa5E51F10976Dc0C053048037b43FB0E24AC2D651#code){target="_blank"}. <span id=last></span> <span id=balance></span>
 
 <script src="https://cdn.jsdelivr.net/npm/web3@1.10.4/dist/web3.min.js"></script>
 <script>
@@ -65,11 +65,11 @@ function poll () {
     })
     token.methods.lastTransaction().call().then(function (ts) {
         // Just keep updating, so the user's balance is updated after purchase
-        console.log(ts)
+        $$('#last').innerText = 'Last donation: ' + new Date(1e3*ts) + '.'
     })
-    web3.eth.getBalance(addr).then(function (balance) {
+    web3js.eth.getBalance(addr).then(function (balance) {
         // Just keep updating, so the user's balance is updated after purchase
-        console.log(balance)
+        $$('#balance').innerText = 'Contract holds: ' + balance/1e18 + ' ETH.'
     })
 }
 
@@ -93,6 +93,7 @@ function startApp () {
 
 var $$ = function (e) { return document.querySelector(e) }
 
+$$('form').onsubmit = _ => false;
 
 window.onload = _ => {
 if (window.ethereum) {
