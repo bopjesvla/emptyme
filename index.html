@@ -195,27 +195,28 @@ margin-top: 100px;
 }
 img {max-width: min(500px, 100%); border: 1px solid black; margin: 0 auto; display: block;} hr, body {margin-top: 0; padding-top: 0}
 body {padding-bottom: 15px;}
-.humanchessgraphic {max-width: 400px; max-width: min(400px, 100%);}
 <!-- .border {border: 1px solid black;} -->
 h3 a, kbd a {text-decoration: none; color: inherit;}</style>
 <h2
-id="a-smart-contract-anyone-can-drain-once-people-stop-sending-it-money">A
-smart contract anyone can drain once people stop sending it money</h2>
+id="a-smart-contract-anyone-can-steal-from-once-people-stop-sending-it-money">A
+smart contract anyone can steal from (once people stop sending it
+money)</h2>
 <p>The smart contract at
-<code>0xa5E51F10976Dc0C053048037b43FB0E24AC2D651</code> lets anyone
-drain its balance. If you have a Web3 wallet like <a
+<code>0xa5E51F10976Dc0C053048037b43FB0E24AC2D651</code> lets anyone take
+its money. If you have a Web3 wallet like <a
 href="https://metamask.io">Metamask</a> installed, just click this
 button:</p>
 <button id="drain">
 Drain
 </button>
-<p>Before giving you its life savings, the smart contract first checks
-whether anyone sent Ethereum to it in the last 24 hours.</p>
+<p>There’s one catch. Before handing over its life savings, the smart
+contract first checks whether anyone sent Ethereum to it in the last 24
+hours.</p>
 <form>
 <input id=amount type="number" required value="0.001" min="0.001" step=any  onchange="this.value = this.value < 0.001 ? 0.001 : this.value"></input><input type=submit id=transfer value ="Send ETH to contract">
 </form>
-<p>If no one did (and why would anyone?), you’ll receive its entire
-balance.</p>
+<p>If no one sent the contract any money (and why would anyone?), you’ll
+receive its entire balance.</p>
 <p>Recent transactions to the smart contract can be viewed on <a
 href="https://etherscan.io/address/0xa5E51F10976Dc0C053048037b43FB0E24AC2D651"
 target="_blank">Etherscan</a>. The source code, verified against the

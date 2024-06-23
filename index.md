@@ -1,5 +1,3 @@
-
-
 ---
 pagetitle: A smart contract anyone can drain once people stop sending it money
 command: pandoc index.md -o index.html -s
@@ -34,21 +32,20 @@ margin-top: 100px;
 }
 img {max-width: min(500px, 100%); border: 1px solid black; margin: 0 auto; display: block;} hr, body {margin-top: 0; padding-top: 0}
 body {padding-bottom: 15px;}
-.humanchessgraphic {max-width: 400px; max-width: min(400px, 100%);}
 <!-- .border {border: 1px solid black;} -->
 h3 a, kbd a {text-decoration: none; color: inherit;}</style>
 
-## A smart contract anyone can drain once people stop sending it money
+## A smart contract anyone can steal from (once people stop sending it money)
 
-The smart contract at `0xa5E51F10976Dc0C053048037b43FB0E24AC2D651` lets anyone drain its balance. If you have a Web3 wallet like [Metamask](https://metamask.io) installed, just click this button:
+The smart contract at `0xa5E51F10976Dc0C053048037b43FB0E24AC2D651` lets anyone take its money. If you have a Web3 wallet like [Metamask](https://metamask.io) installed, just click this button:
 
 <button id=drain>Drain</button>
 
-Before giving you its life savings, the smart contract first checks whether anyone sent Ethereum to it in the last 24 hours.
+There's one catch. Before handing over its life savings, the smart contract first checks whether anyone sent Ethereum to it in the last 24 hours.
 
 <form><input id=amount type="number" required value="0.001" min="0.001" step=any  onchange="this.value = this.value < 0.001 ? 0.001 : this.value"></input><input type=submit id=transfer value ="Send ETH to contract"></form>
 
-If no one did (and why would anyone?), you'll receive its entire balance.
+If no one sent the contract anything (and why would anyone?), you'll receive its entire balance.
 
 Recent transactions to the smart contract can be viewed on [Etherscan](https://etherscan.io/address/0xa5E51F10976Dc0C053048037b43FB0E24AC2D651){target="_blank"}. The source code, verified against the bytecode by Etherscan, can be found [here](https://etherscan.io/address/0xa5E51F10976Dc0C053048037b43FB0E24AC2D651#code){target="_blank"}. 
 
