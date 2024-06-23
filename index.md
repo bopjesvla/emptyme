@@ -26,7 +26,7 @@ button, input[type=submit] {
   border: 1px solid black;
   font-size: 16px;
   margin-right: -1px;
-  max-width: 40%;
+  max-width: 30%;
 }
 footer {
 margin-top: 100px;
