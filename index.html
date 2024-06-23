@@ -191,7 +191,7 @@ Drain
 <p>Before giving you its life savings, the smart contract first checks
 whether anyone sent Ethereum to it in the last 24 hours.</p>
 <form>
-<input id=amount type="number" required value="0.001" min="0.001"  onchange="this.value = this.value < 0.001 ? 0.001 : this.value"></input><input type=submit id=transfer value ="Send to contract">
+<input id=amount type="number" required value="0.001" min="0.001" step=any  onchange="this.value = this.value < 0.001 ? 0.001 : this.value"></input><input type=submit id=transfer value ="Send to contract">
 </form>
 <p>If no one did so, you’ll receive its entire balance.</p>
 <p>Recent transactions to the smart contract can be viewed on <a

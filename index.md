@@ -25,7 +25,7 @@ The smart contract at `0xa5E51F10976Dc0C053048037b43FB0E24AC2D651` lets anyone d
 
 Before giving you its life savings, the smart contract first checks whether anyone sent Ethereum to it in the last 24 hours.
 
-<form><input id=amount type="number" required value="0.001" min="0.001"  onchange="this.value = this.value < 0.001 ? 0.001 : this.value"></input><input type=submit id=transfer value ="Send to contract"></form>
+<form><input id=amount type="number" required value="0.001" min="0.001" step=any  onchange="this.value = this.value < 0.001 ? 0.001 : this.value"></input><input type=submit id=transfer value ="Send to contract"></form>
 
 If no one did so, you'll receive its entire balance.
 
