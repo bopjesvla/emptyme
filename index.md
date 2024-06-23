@@ -53,6 +53,8 @@ Recent transactions to the smart contract can be viewed on [Etherscan](https://e
 
 <span id=balance></span>
 
+<small>&copy; Bob de Ruiter</small>
+
 <script src="https://cdn.jsdelivr.net/npm/web3@1.10.4/dist/web3.min.js"></script>
 <script>
 let abi = [{"inputs": [], "name": "drain", "outputs": [], "stateMutability": "nonpayable", "type": "function"}, {"inputs": [], "name": "lastTransaction", "outputs": [{"internalType": "uint256", "name": "", "type": "uint256"}], "stateMutability": "view", "type": "function"}, {"stateMutability": "payable", "type": "receive"}]
