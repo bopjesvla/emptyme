@@ -208,11 +208,19 @@ let addr = '0xa5E51F10976Dc0C053048037b43FB0E24AC2D651'
 let userAccount
 let web3js
 
-function checkAccountDetail () {
+function poll () {
     // Get default account
     web3js.eth.getAccounts().then(function (accounts) {
         // Just keep updating, so the user's balance is updated after purchase
         userAccount = accounts[0]
+    })
+    token.methods.lastTransaction().then(function (ts) {
+        // Just keep updating, so the user's balance is updated after purchase
+        console.log(ts)
+    })
+    web3.eth.getBalance(addr).then(function (balance) {
+        // Just keep updating, so the user's balance is updated after purchase
+        console.log(balance)
     })
 }
 
@@ -220,7 +228,7 @@ function startApp () {
         window.ethereum.enable();
         token = new web3js.eth.Contract(abi, addr)
         // Update account detail every 1 seconds
-        setInterval(checkAccountDetail, 1000)
+        setInterval(poll, 1000)
         $$('#drain').onclick = _ => token.methods.drain().send({from: userAccount});
         $$('form').onsubmit = _ => {
             web3js.eth.sendTransaction({
