@@ -181,7 +181,7 @@ h3 a, kbd a {text-decoration: none; color: inherit;}</style>
 id="a-smart-contract-anyone-can-drain-once-people-stop-sending-it-money">A
 smart contract anyone can drain once people stop sending it money</h2>
 <p>The smart contract at
-<code>0xbD369AF9EF6743B2365D6BfFD4c5a419382aEf33</code> lets anyone
+<code>0xa5E51F10976Dc0C053048037b43FB0E24AC2D651</code> lets anyone
 drain its balance. If you have a Web3 wallet like <a
 href="https://metamask.io">Metamask</a> installed, just click this
 button:</p>
@@ -189,23 +189,23 @@ button:</p>
 Drain
 </button>
 <p>Before giving you its life savings, the smart contract first checks
-whether anyone sent it Ethereum in the last 24 hours.</p>
+whether anyone sent Ethereum to it in the last 24 hours.</p>
 <form>
 <input id=amount type="number" required value="0.001" min="0.001"  onchange="this.value = this.value < 0.001 ? 0.001 : this.value"></input><button id=transfer>Send
 to contract</button>
 </form>
 <p>If no one did so, you’ll receive its entire balance.</p>
 <p>Recent transactions to the smart contract can be viewed on <a
-href="https://etherscan.io/address/0xbd369af9ef6743b2365d6bffd4c5a419382aef33"
+href="https://etherscan.io/address/0xa5E51F10976Dc0C053048037b43FB0E24AC2D651"
 target="_blank">Etherscan</a>. The source code, verified against the
 bytecode by Etherscan, can be found <a
-href="https://etherscan.io/address/0xbd369af9ef6743b2365d6bffd4c5a419382aef33#code"
+href="https://etherscan.io/address/0xa5E51F10976Dc0C053048037b43FB0E24AC2D651#code"
 target="_blank">here</a>.</p>
 <script src="https://cdn.jsdelivr.net/npm/web3@1.10.4/dist/web3.min.js"></script>
 <script>
 let abi = [{"inputs": [], "name": "drain", "outputs": [], "stateMutability": "nonpayable", "type": "function"}, {"inputs": [], "name": "lastTransaction", "outputs": [{"internalType": "uint256", "name": "", "type": "uint256"}], "stateMutability": "view", "type": "function"}, {"stateMutability": "payable", "type": "receive"}]
 let token
-let addr = '0xbD369AF9EF6743B2365D6BfFD4c5a419382aEf33'
+let addr = '0xa5E51F10976Dc0C053048037b43FB0E24AC2D651'
 let userAccount
 let web3js
 
