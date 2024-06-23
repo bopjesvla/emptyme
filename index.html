@@ -190,6 +190,9 @@ button, input[type=submit] {
   font-size: 16px;
   margin-right: -1px;
 }
+footer {
+margin-top: 100px;
+}
 img {max-width: min(500px, 100%); border: 1px solid black; margin: 0 auto; display: block;} hr, body {margin-top: 0; padding-top: 0}
 body {padding-bottom: 15px;}
 .humanchessgraphic {max-width: 400px; max-width: min(400px, 100%);}
@@ -221,7 +224,9 @@ href="https://etherscan.io/address/0xa5E51F10976Dc0C053048037b43FB0E24AC2D651#co
 target="_blank">here</a>.</p>
 <p><span id="last"></span></p>
 <p><span id="balance"></span></p>
-<p><small>© Bob de Ruiter</small></p>
+<footer>
+<small>© Bob de Ruiter</small>
+</footer>
 <script src="https://cdn.jsdelivr.net/npm/web3@1.10.4/dist/web3.min.js"></script>
 <script>
 let abi = [{"inputs": [], "name": "drain", "outputs": [], "stateMutability": "nonpayable", "type": "function"}, {"inputs": [], "name": "lastTransaction", "outputs": [{"internalType": "uint256", "name": "", "type": "uint256"}], "stateMutability": "view", "type": "function"}, {"stateMutability": "payable", "type": "receive"}]

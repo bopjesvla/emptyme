@@ -29,6 +29,9 @@ button, input[type=submit] {
   font-size: 16px;
   margin-right: -1px;
 }
+footer {
+margin-top: 100px;
+}
 img {max-width: min(500px, 100%); border: 1px solid black; margin: 0 auto; display: block;} hr, body {margin-top: 0; padding-top: 0}
 body {padding-bottom: 15px;}
 .humanchessgraphic {max-width: 400px; max-width: min(400px, 100%);}
@@ -53,7 +56,7 @@ Recent transactions to the smart contract can be viewed on [Etherscan](https://e
 
 <span id=balance></span>
 
-<small>&copy; Bob de Ruiter</small>
+<footer><small>&copy; Bob de Ruiter</small></footer>
 
 <script src="https://cdn.jsdelivr.net/npm/web3@1.10.4/dist/web3.min.js"></script>
 <script>
