@@ -220,11 +220,11 @@ function startApp () {
         token = new web3js.eth.Contract(abi, addr)
         // Update account detail every 1 seconds
         setInterval(checkAccountDetail, 1000)
-        $$('#drain').onclick = _ => token.drain().send({from: userAccount});
+        $$('#drain').onclick = _ => token.methods.drain().send({from: userAccount});
         $$('#transfer').onclick = _ => web3js.eth.sendTransaction({
         from: userAccount,
-        value: web3js.utils.toWei(+$$('#amount').value, 'ether'),
-        to: crowdsaleContractAddress
+        value: web3js.utils.toWei($$('#amount').value, 'ether'),
+        to: addr
     })
 
 }
