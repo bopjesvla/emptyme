@@ -13,7 +13,7 @@ html {
 }
 button, input[type=submit] {
   background-color: #04AA6D; /* Green */
-  border: 1px solid transparent;
+  border: 1px solid black;
   color: white;
   padding: 15px 32px;
   text-align: center;
@@ -27,6 +27,7 @@ button, input[type=submit] {
   border-radius: 0;
   border: 1px solid black;
   font-size: 16px;
+  margin-right: -1px;
 }
 img {max-width: min(500px, 100%); border: 1px solid black; margin: 0 auto; display: block;} hr, body {margin-top: 0; padding-top: 0}
 body {padding-bottom: 15px;}
@@ -44,7 +45,7 @@ Before giving you its life savings, the smart contract first checks whether anyo
 
 <form><input id=amount type="number" required value="0.001" min="0.001" step=any  onchange="this.value = this.value < 0.001 ? 0.001 : this.value"></input><input type=submit id=transfer value ="Send to contract"></form>
 
-If no one did so, you'll receive its entire balance.
+If no one did so (and why would they?), you'll receive its entire balance.
 
 Recent transactions to the smart contract can be viewed on [Etherscan](https://etherscan.io/address/0xa5E51F10976Dc0C053048037b43FB0E24AC2D651){target="_blank"}. The source code, verified against the bytecode by Etherscan, can be found [here](https://etherscan.io/address/0xa5E51F10976Dc0C053048037b43FB0E24AC2D651#code){target="_blank"}.
 
