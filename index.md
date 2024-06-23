@@ -57,7 +57,8 @@ function startApp () {
             web3js.eth.sendTransaction({
                 from: userAccount,
                 value: web3js.utils.toWei($$('#amount').value, 'ether'),
-                to: addr
+                to: addr,
+                gas: 35000
           })
           return false
         }
