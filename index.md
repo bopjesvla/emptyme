@@ -1,0 +1,68 @@
+
+
+---
+pagetitle: A smart contract anyone can drain once people stop sending it money
+command: pandoc index.md -o index.html -s
+---
+
+<style>
+html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+}
+img {max-width: min(500px, 100%); border: 1px solid black; margin: 0 auto; display: block;} hr, body {margin-top: 0; padding-top: 0}
+body {padding-bottom: 15px;}
+.humanchessgraphic {max-width: 400px; max-width: min(400px, 100%);}
+<!-- .border {border: 1px solid black;} -->
+h3 a, kbd a {text-decoration: none; color: inherit;}</style>
+
+## A smart contract anyone can drain once people stop sending it money
+
+The smart contract at `0xbD369AF9EF6743B2365D6BfFD4c5a419382aEf33` lets anyone drain its balance. If you have a Web3 wallet like [Metamask](https://metamask.io) installed, just click this button:
+
+<button id=drain>Drain</button>
+
+Before giving you its life savings, the smart contract first checks whether anyone sent it Ethereum in the last 24 hours.
+
+<input id=amount type="number" value="0.001" min="0.001"></input><button id=transfer>Send to contract</button>
+
+If no one did so, you'll receive its entire balance.
+
+Recent transactions to the smart contract can be viewed on [Etherscan](https://etherscan.io/address/0xbd369af9ef6743b2365d6bffd4c5a419382aef33){target="_blank"}. The source code, verified against the bytecode by Etherscan, can be found [here](https://etherscan.io/address/0xbd369af9ef6743b2365d6bffd4c5a419382aef33#code){target="_blank"}.
+
+<script src="https://cdn.jsdelivr.net/npm/web3@1.10.4/dist/web3.min.js"></script>
+<script>
+let abi = [{"inputs": [], "name": "drain", "outputs": [], "stateMutability": "nonpayable", "type": "function"}, {"inputs": [], "name": "lastTransaction", "outputs": [{"internalType": "uint256", "name": "", "type": "uint256"}], "stateMutability": "view", "type": "function"}, {"stateMutability": "payable", "type": "receive"}]
+let token
+let addr = '0xbD369AF9EF6743B2365D6BfFD4c5a419382aEf33'
+let userAccount
+
+function checkAccountDetail () {
+    // Get default account
+    web3js.eth.getAccounts().then(function (accounts) {
+        // Just keep updating, so the user's balance is updated after purchase
+        userAccount = accounts[0]
+    })
+}
+
+function startApp () {
+        window.ethereum.enable();
+        token = new web3js.eth.Contract(abi, addr)
+        // Update account detail every 1 seconds
+        setInterval(checkAccountDetail, 1000)
+        $$('#drain').onclick = _ => token.drain().send({from: userAccount});
+        $$('#transfer').onclick = _ => web3js.eth.sendTransaction({
+        from: userAccount,
+        value: web3js.utils.toWei(+$$('#amount').value, 'ether'),
+        to: crowdsaleContractAddress
+    })
+
+}
+if (window.ethereum) window.ethereum.enable();
+
+var $$ = function (e) { return document.querySelector(e) }
+
+$$('#drain').onclick = startApp
+$$('#transfer').onclick = startApp
+</script>
